@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;700&display=swap" rel="stylesheet">
+    <title>A Mercar</title>
+</head>
+<body>
+    <header>
+        <div>
+            <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">A Mercar</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Dropdown
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled">Disabled</a>
+                            </li>
+                        </ul>
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                        <div class="shopping">
+                            <div class="shopping-cart">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512" class="cart">
+                                    <path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/>
+                                </svg>
+                                <div class="shopping-cart-count">
+                                    <span id="number-product">0</span>
+                                </div>
+                            </div>
+                            <div class="shopping-product hidden">
+                                <div class="shopping-product-row">
+                                    <div class="shopping-product-row-cart">
+                                        <div class="shopping-product-row-cart-info">
+                                            <span class="quantity">1</span>
+                                            <p class="product  mb-0">Cebolla</p>
+                                            <span class="prix">$1.12</span>
+                                        </div>
+                                        <svg class="icon-close" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                                            <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="shopping-product-total">
+                                    <h3 class="mb-0">Total: </h3>
+                                    <span class="total">$70</span>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>             
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div>
+            <h1>Lorem ipsum dolor siinctio eveniet voluptates alias doloremque molestiae. Facere dolores deleniti non dicta fugit vero officia sed vel aspernatur placeat.</h1>
+            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae rerum hic perferendis cum alias sunt quaerat magni debitis laborum consectetur.</h2>        
+        </div>
+        <div class="container-lg box">
+            <div>
+                <img src="images/onion.webp" alt="Cebolla"><hr class="m-0">
+                <div class="info">
+                    <h2 class="m-0">Cebolla cabezona 1kg</h2>
+                    <p class="price m-0">$1<span>.12</span></p>
+                    <button class="add-cart mb-2">Añadir al carrito</button>
+                </div>
+            </div>
+            <div>
+                <img src="images/orange.webp" alt="Naranja"><hr class="m-0">
+                <div class="info">
+                    <h2 class="m-0">Naranja 1kg</h2>
+                    <p class="price m-0">$0<span>.99</span></p>
+                    <button class="add-cart mb-2">Añadir al carrito</button>
+                </div>
+            </div>
+            <div>
+                <img src="images/coffe.webp" alt="Cafe"><hr class="m-0">
+                <div class="info">
+                    <h2 class="m-0">Cafe Tostado 500gr</h2>
+                    <p class="price m-0">$7<span>.99</span></p>
+                    <button class="add-cart mb-2">Añadir al carrito</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/merch.js"></script>
+</body>
+</html>
