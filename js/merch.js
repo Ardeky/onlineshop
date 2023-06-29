@@ -2,14 +2,17 @@ const btnCart = document.querySelector('.shopping-cart');
 const containerCartProduct = document.querySelector('.shopping-product');
 
 btnCart.addEventListener('click', () =>{
-    containerCartProduct.classList.toogle('hidden')
+    containerCartProduct.classList.toggle('hidden-list')
 });
 
 const rowProduct = document.querySelector('.shopping-product-row');
 const cartInfo= document.querySelector('.shopping-product-row-cart');
 const productList = document.querySelector('.box');
 const valueTotal = document.querySelector('.total');
-const countProduct = document.querySelector('#number-product')
+const countProduct = document.querySelector('#number-product');
+const cartEmpty = document.querySelector('.cart-empty');
+const cartTotal = document.querySelector('.shopping-product-total');
+const back = document.querySelector('.back-line');
 
 let allProduct = [];
 
@@ -40,7 +43,29 @@ productList.addEventListener('click', e => {
         showHTML();
     }
 });
+rowProduct.addEventListener('click', (e) => {
+    if(e.target.classList.contains('icon-close')){
+        const product = e.target.parentElement;
+        const title = product.querySelector('p').textContent;
+
+        allProduct = allProduct.filter(
+            product => product.title !== title
+        );
+
+        showHTML();
+    }
+});
 const showHTML = () => {
+    if (!allProduct.length) {
+		cartEmpty.classList.remove('hidden');
+		rowProduct.classList.add('hidden');
+		cartTotal.classList.add('hidden');
+	} else {
+		cartEmpty.classList.add('hidden');
+		rowProduct.classList.remove('hidden');
+		cartTotal.classList.remove('hidden');
+	}
+
     rowProduct.innerHTML= '';
 
     let total = 0;
