@@ -13,8 +13,38 @@ const countProduct = document.querySelector('#number-product');
 const cartEmpty = document.querySelector('.cart-empty');
 const cartTotal = document.querySelector('.shopping-product-total');
 const countNumber = document.querySelector('.shopping-cart-count')
+const main = document.querySelector('.box');
+const pay = document.querySelector('.pay');
 
 let allProduct = JSON.parse(localStorage.getItem('saveData')) || [];
+
+async function showCards(){
+    try {
+        const response = await fetch('./cards.json');
+        const data = await response.json();
+        const cards = data.card;
+
+        cards.forEach(character => {
+            const cardDiv = document.createElement('div');
+            cardDiv.classList.add('box');
+            cardDiv.innerHTML = `
+                <div>
+                    <img src="${character.image}" alt="${character.product}"><hr class="m-0">
+                    <div class="info position-relative">
+                        <h2 class="m-0">${character.product}</h2>
+                        <p class="price m-0">${character.price}<span>${character.span}</span></p>
+                        <input class="qty form-control-plaintext position-absolute start-0 bottom-0 text-center fs-4 mb-3" type="number" min="1" max="99" value="1">                 
+                        <button class="add-cart mb-2">Añadir al carrito</button>
+                    </div>
+                </div> 
+              `;
+            main.appendChild(cardDiv);
+        });
+    } catch (err) {
+        return console.error(err);
+    }
+}
+showCards()
 
 productList.addEventListener('click', e => {
     
@@ -27,7 +57,10 @@ productList.addEventListener('click', e => {
         };
         console.log(infoProduct)
         if(infoProduct.quantity <= 0 ){
-            alert('Coloca un numero positivo');
+            Swal.fire({
+                icon: 'error',
+                title: 'Coloca la cantidad que deseas comprar'
+            })
             return 0;
         }else{
             const exist = allProduct.some(product => product.title === infoProduct.title);
@@ -112,15 +145,13 @@ const showHTML = () => {
         minus.addEventListener('click', () => {
             if(product.quantity !== 1){
                 product.quantity--;
-                minus.classList.remove('block');
-            }else{
-                minus.classList.add('block');
             }
             saveData();
             showHTML();
         });
         plus.addEventListener('click', () => {
             product.quantity++;
+
             saveData();
             showHTML();
         });
@@ -129,9 +160,41 @@ const showHTML = () => {
         totalProduct = totalProduct + product.quantity;
     });
     valueTotal.innerText = `$${total.toFixed(2)}`;
-    
-    if(totalProduct > 9){
-        countProduct.innerText = '+9'
+    pay.addEventListener('click', () => {
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+              confirmButton: 'btn btn-success',
+              cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+          })
+          
+          swalWithBootstrapButtons.fire({
+            title: '¿Has terminado tus compras?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Si, terminé mis compras!',
+            cancelButtonText: 'No, aun estoy en ello!',
+            reverseButtons: true
+          }).then((result) => {
+            if (result.isConfirmed) {
+              swalWithBootstrapButtons.fire(
+                'Tu pago ha sido exitoso!',
+                '',
+                'success'
+              )
+              allProduct = [];
+              saveData();
+              showHTML();
+            } else if (
+              result.dismiss === Swal.DismissReason.cancel
+            ) {
+                return 0;
+            }
+          })
+    });
+    if(totalProduct > 99){
+        countProduct.innerText = '+99'
     } else{   
         countProduct.innerText = totalProduct;
     }
@@ -139,5 +202,4 @@ const showHTML = () => {
 const saveData = () => {
     localStorage.setItem('saveData', JSON.stringify(allProduct));
 }
-
 showHTML();

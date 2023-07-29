@@ -1,0 +1,87 @@
+{ "card" : [ 
+        {
+            "image": "images/onion.webp",
+            "product": "Cebolla Cabezona 1kg",
+            "price" : "$1",
+            "span" : ".12"    
+        },
+        {
+            "image": "images/orange.webp",
+            "product": "Naranja 1kg",
+            "price" : "$0",
+            "span" : ".99"    
+        },
+        {
+            "image": "images/coffe.webp",
+            "product": "Cafe Tostado 500g",
+            "price" : "$7",
+            "span" : ".99"    
+        },
+        {
+            "image": "images/tomato.webp",
+            "product": "Tomate 1kg",
+            "price" : "$1",
+            "span" : ".49"    
+        },
+        {
+            "image": "images/cashews.webp",
+            "product": "Marañones 200g",
+            "price" : "$2",
+            "span" : ".64"    
+        },
+        {
+            "image": "images/broccoli.webp",
+            "product": "Brocoli 1kg",
+            "price" : "$2",
+            "span" : ".99"    
+        },
+        {
+            "image": "images/peach.webp",
+            "product": "Duraznos 1kg",
+            "price" : "$3",
+            "span" : ".75"    
+        },
+        {
+            "image": "images/egg.webp",
+            "product": "Huevos (24und)",
+            "price" : "$5",
+            "span" : ".27"    
+        },
+        {
+            "image": "images/strawberry.webp",
+            "product": "Fresas 500g",
+            "price" : "$1",
+            "span" : ".81"    
+        },
+        {
+            "image": "images/cucumber.webp",
+            "product": "Pepino 1kg",
+            "price" : "$2",
+            "span" : ".13"    
+        },
+        {
+            "image": "images/banana.webp",
+            "product": "Banana 1kg",
+            "price" : "$2",
+            "span" : ".30"    
+        },
+        {
+            "image": "images/bacon.webp",
+            "product": "Tocineta 500g",
+            "price" : "$9",
+            "span" : ".89"    
+        },
+        {
+            "image": "images/watermelon.webp",
+            "product": "Sandia (1und)",
+            "price" : "$4",
+            "span" : ".66"    
+        },
+        {
+            "image": "images/pineapple.webp",
+            "product": "Anana en rodajas 1kg",
+            "price" : "$2",
+            "span" : ".39"    
+        }
+    ]
+}
