@@ -39,10 +39,12 @@ async function showCards(){
                 </div> 
               `;
             main.appendChild(cardDiv);
+            console.log('pasa por aqui')
         });
     } catch (err) {
         return console.error(err);
     }
+    console.log('pasa')
 }
 showCards()
 
